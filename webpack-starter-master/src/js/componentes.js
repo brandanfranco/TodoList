@@ -9,7 +9,7 @@ const txtInput = document.querySelector(".new-todo")
 export const creadoHtml = (todo) =>{
 
     const HtmlTodo = 
-        `<li class="${(todo.completado)?"completed":""}" data-id="abc">
+        `<li class="${(todo.completado)?"completed":""}" data-id="${todo.id}">
             <div class="view">
             <input class="toggle" type="checkbox" ${(todo.completado)?"checked":""}>
             <label>${todo.tarea}</label>
@@ -40,4 +40,22 @@ txtInput.addEventListener("keyup", (event) =>{
             txtInput.value = ""
 
         }
+})
+
+
+divTodoList.addEventListener("click", (event) =>{
+    const nombreDeElemento = event.target.localName  // label , input , button
+    const todoElemento = event.target.parentElement.parentElement
+    const todoId = todoElemento.getAttribute("data-id")
+
+
+    if( nombreDeElemento.includes("input")){ // click in check
+
+        todoList.marcarCompletado(todoId)
+        todoElemento.classList.toggle("completed")
+    }
+
+
+    console.log(todoElemento)
+    console.log(todoId)
 })
