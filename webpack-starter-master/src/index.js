@@ -6,13 +6,8 @@ import { creadoHtml } from './js/componentes';
 
 
 
- export const todoList = new TodoList()
+ export const todoList = new TodoList();
 
-
-const tarea = new Todo("Estudiar programamcion ");
-
-
-
-creadoHtml(tarea)
+ todoList.todos.forEach(creadoHtml)
 
 
