@@ -10,4 +10,6 @@ import { creadoHtml } from './js/componentes';
 
  todoList.todos.forEach(creadoHtml)
 
+ console.log("todos", todoList.todos);
+
 
